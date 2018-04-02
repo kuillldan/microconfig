@@ -1,0 +1,47 @@
+spring:
+    profiles:
+        active: 
+        - dev
+---
+server:
+    port: 8001
+spring:
+    profiles: dev
+    application:
+        name: service
+    datasource:
+        driver-class-name: com.mysql.jdbc.driver
+        url: jdbc:mysql://127.0.0.1:3306/mldn8001?useunicode=true&characterencoding=utf-8&usessl=true&servertimezone=utc
+        username: root
+        password: admin
+    jpa:
+      hibernate:
+        ddl-auto: update
+        show-sql: true
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://192.168.1.104:7001/eureka,http://192.168.1.104:7002/eureka,http://192.168.1.104:7003/eureka
+
+---
+server:
+    port: 8101
+spring:
+    profiles: dev
+    application:
+        name: service
+    datasource:
+        driver-class-name: com.mysql.jdbc.driver
+        url: jdbc:mysql://127.0.0.1:3306/mldn8001?useunicode=true&characterencoding=utf-8&usessl=true&servertimezone=utc
+        username: root
+        password: admin
+    jpa:
+      hibernate:
+        ddl-auto: update
+        show-sql: true
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://192.168.1.104:7001/eureka,http://192.168.1.104:7002/eureka,http://192.168.1.104:7003/eureka
