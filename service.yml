@@ -28,7 +28,7 @@ eureka:
 server:
     port: 8009
 spring:
-    profiles: dev
+    profiles: beta
     application:
         name: service
     datasource:
